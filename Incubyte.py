@@ -37,33 +37,28 @@ def move_backward(position, direction):
 
 # Function for handling direction changed
 def change_direction(initial_direction, rotate_to):
-    # For left rotation
-    if rotate_to == "L":
-        if initial_direction == "N":
-            return "W"
-        elif initial_direction == "S":
-            return "E"
-        elif initial_direction == "E":
-            return "N"
-        elif initial_direction == "W":
-            return "S"
-        elif initial_direction == "U":
-            return "W"
-        elif initial_direction == "D":
-            return "E"
-    # For right rotation 
-    elif rotate_to == "R":
-        if initial_direction == "N":
-            return "E"
-        elif initial_direction == "S":
-            return "W"
-        elif initial_direction == "E":
-            return "S"
-        elif initial_direction == "W":
-            return "N"
-        elif initial_direction == "U":
-            return "E"
-        elif initial_direction == "D":
-            return "W"
-    # If there is no specific rotation in any direction
+    # Define a dictionary to handle the direction changes
+    direction_changes = {
+        "NL": "W",  # North to Left becomes West
+        "SL": "E",  # South to Left becomes East
+        "EL": "N",  # East to Left becomes North
+        "WL": "S",  # West to Left becomes South
+        "UL": "W",  # Up to Left becomes West
+        "DL": "E",  # Down to Left becomes East
+        "NR": "E",  # North to Right becomes East
+        "SR": "W",  # South to Right becomes West
+        "ER": "S",  # East to Right becomes South
+        "WR": "N",  # West to Right becomes North
+        "UR": "E",  # Up to Right becomes East
+        "DR": "W",  # Down to Right becomes West
+    }
+
+    # Create a key based on the initial direction and rotation instruction
+    key = initial_direction + rotate_to
+
+    # If the key is in the dictionary, return the resulting direction
+    if key in direction_changes:
+        return direction_changes[key]
+
+    # If the key is not in the dictionary, return the initial direction (no rotation)
     return initial_direction
