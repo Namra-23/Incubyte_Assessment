@@ -76,3 +76,10 @@ class TestChangeDirection(unittest.TestCase):
         initial_direction = "D"
         rotate_to = "R"
         self.assertEqual(change_direction(initial_direction, rotate_to), "W")
+            
+    # If there is No rotation
+    def test_no_rotation(self):
+        # Test when no rotation is specified, direction remains unchanged
+        initial_direction = "D"
+        rotate_to = "U"
+        self.assertEqual(change_direction(initial_direction, rotate_to), "D")
