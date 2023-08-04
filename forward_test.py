@@ -33,6 +33,12 @@ class TestMoveForward(unittest.TestCase):
         position = move_forward(position, direction)
         self.assertEqual(position, [-1, 0, 0])
         
+    def test_Down(self):
+        direction = "D"
+        position = [0, 0, 0]
+        position = move_forward(position, direction)
+        self.assertEqual(position, [0, 0, -1])
+        
 
 if __name__ == '__main__':
     unittest.main()
