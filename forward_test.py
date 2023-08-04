@@ -21,6 +21,12 @@ class TestMoveForward(unittest.TestCase):
         position = move_forward(position, direction)
         self.assertEqual(position, [0, 0, 1])
         
+    def test_South(self):
+        direction = "S"
+        position = [0, 0, 0]
+        position = move_forward(position, direction)
+        self.assertEqual(position, [0, -1, 0])
+        
 
 if __name__ == '__main__':
     unittest.main()
