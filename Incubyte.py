@@ -37,6 +37,7 @@ def move_backward(position, direction):
 
 # Function for handling direction changed
 def change_direction(initial_direction, rotate_to):
+    # For left rotation
     if rotate_to == "L":
         if initial_direction == "N":
             return "W"
@@ -50,3 +51,9 @@ def change_direction(initial_direction, rotate_to):
             return "W"
         elif initial_direction == "D":
             return "E"
+    # For right rotation 
+    elif rotate_to == "R":
+        if initial_direction == "N":
+            return "E"
+        elif initial_direction == "S":
+            return "W"
