@@ -15,5 +15,11 @@ class TestMoveBackward(unittest.TestCase):
         position = move_backward(position, direction)
         self.assertEqual(position, [-1, 0, 0])
         
+    def test_move_backward_when_facing_Up(self):
+        direction = "U"
+        position = [0, 0, 0]
+        position = move_backward(position, direction)
+        self.assertEqual(position, [0, 0, -1])
+        
 if __name__ == '__main__':
     unittest.main()
