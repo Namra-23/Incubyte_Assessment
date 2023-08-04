@@ -65,3 +65,5 @@ def change_direction(initial_direction, rotate_to):
             return "E"
         elif initial_direction == "D":
             return "W"
+    # If there is no specific rotation
+    return initial_direction
