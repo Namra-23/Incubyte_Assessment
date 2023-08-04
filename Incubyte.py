@@ -1,3 +1,4 @@
+# Function for handling forward direction
 def move_forward(position, direction):
     new_position = position.copy()
     if direction == "N":
@@ -15,6 +16,7 @@ def move_forward(position, direction):
     
     return new_position
 
+# Function for handling backward direction
 def move_backward(position, direction):
     new_position = position.copy()
     if direction == "N":
@@ -31,3 +33,10 @@ def move_backward(position, direction):
         new_position[2] += 1
     
     return new_position
+
+
+# Function for handling direction changed
+def change_direction(initial_direction, rotate_to):
+    if rotate_to == "L":
+        if initial_direction == "N":
+            return "W"

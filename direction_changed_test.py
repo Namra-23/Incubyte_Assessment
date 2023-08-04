@@ -1,4 +1,5 @@
 import unittest
+from Incubyte import change_direction
 
 class TestChangeDirection(unittest.TestCase):
 
