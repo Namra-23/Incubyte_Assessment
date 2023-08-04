@@ -57,3 +57,7 @@ def change_direction(initial_direction, rotate_to):
             return "E"
         elif initial_direction == "S":
             return "W"
+        elif initial_direction == "E":
+            return "S"
+        elif initial_direction == "W":
+            return "N"
