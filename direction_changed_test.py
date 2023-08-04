@@ -52,3 +52,15 @@ class TestChangeDirection(unittest.TestCase):
         initial_direction = "S"
         rotate_to = "R"
         self.assertEqual(change_direction(initial_direction, rotate_to), "W")
+        
+    def test_right_East(self):
+        # Test changing direction when initially facing East and rotating right
+        initial_direction = "E"
+        rotate_to = "R"
+        self.assertEqual(change_direction(initial_direction, rotate_to), "S")
+
+    def test_right_West(self):
+        # Test changing direction when initially facing West and rotating right
+        initial_direction = "W"
+        rotate_to = "R"
+        self.assertEqual(change_direction(initial_direction, rotate_to), "N")
