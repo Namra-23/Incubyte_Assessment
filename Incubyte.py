@@ -62,3 +62,29 @@ def change_direction(initial_direction, rotate_to):
 
     # If the key is not in the dictionary, return the initial direction (no rotation)
     return initial_direction
+
+
+# Code to execute Command
+
+def execute_commands(commands, initial):
+    position = initial["position"].copy()
+    direction = initial["direction"]
+
+    for command in commands:
+        if command == "f":
+            position = move_forward(position, direction)
+        elif command == "b":
+            position = move_backward(position, direction)
+        elif command == "r":
+            direction = change_direction(direction, "R")
+        elif command == "l":
+            direction = change_direction(direction, "L")
+        elif command == "u":
+            position[2] += 1
+        elif command == "d":
+            position[2] -= 1
+
+    return {
+        "position": position,
+        "direction": direction,
+    }
