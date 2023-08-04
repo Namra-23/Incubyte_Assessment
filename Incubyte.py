@@ -27,5 +27,7 @@ def move_backward(position, direction):
         new_position[1] += 1
     elif direction == "W":
         new_position[0] += 1
+    elif direction == "D":
+        new_position[2] += 1
     
     return new_position
